@@ -47,14 +47,6 @@ body, html{
     padding: 3em;
 }
 
-/* 
-.container .questions .qid{
-  padding: .2em .7em;
-  color: #222222;
-  background-color: #0DFF92;
-  border-radius: 50px;
-} */
-
 .container .grid{
     margin-top: 3em;
     display: grid;
@@ -162,7 +154,6 @@ input[type=radio]:checked ~ .text-primary{
   color: var(--primary-color)
 } 
 
-/* To get selected option we are using this checked class */
 .checked {
   border: 5px solid var(--primary-color) !important;
 }

@@ -1,33 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
+import data from "../database/data";
 
 const Question = () => {
-
-const [checked, setChecked] = useState(undefined)
-
-    function onSelect(){
-        
-        console.log("Radio button change");
-    }
+  const [checked, setChecked] = useState(undefined);
+  const question = data[0];
+  useEffect(() => {
+    console.log(question);
+  });
+  function onSelect() {
+    console.log("Radio button change");
+  }
   return (
     <div className="questions">
-        <h2 className="text-light">Sample Question 1</h2>
+      <h2 className="text-light">{question.question}</h2>
 
-        <ul>
-            <li>
-                <input 
-                type="radio"
-                value={checked}
-                name="options"
-                id='q1-option'
-                onChange={onSelect()}
-                />
+      <ul key={question.id}>
+        {question.option.map((q, i) => (
+          <li key={i}>
+            <input
+              type="radio"
+              value={checked}
+              name="options"
+              id={`q${i}-optios`}
+              onChange={onSelect()}
+            />
 
-                <label htmlFor="q1-option" className='text-primary'>option</label>
-                <div className="check checked"></div>
-            </li>
-        </ul>
+            <label htmlFor={`q${i}-optios`} className="text-primary">
+              {q}
+            </label>
+            <div className="check"></div>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Question
+export default Question;
