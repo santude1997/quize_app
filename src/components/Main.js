@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import {Link} from 'react-router-dom'
+import '../styles/Main.css'
 
 const Main = () => {
 
@@ -17,7 +18,7 @@ const Main = () => {
             </ol>
 
             <form id="form">
-                <input ref={inputRef} type="text" placeholder='User Name*' />
+                <input ref={inputRef} className = "userid" type="text" placeholder='User Name*' />
             </form>
 
             <div className="start">
