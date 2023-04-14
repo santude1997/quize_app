@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Question from './Question';
-
+import {useSeletor } from 'react-redux'
 const Quiz = () => {
+
+  const {question} = useSeletor(state => state)
+
+  useEffect(() =>{
+    console.log();
+  })
 
   function onNext() {
     console.log("On next Click");
