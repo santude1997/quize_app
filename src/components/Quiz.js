@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import Question from './Question';
-import {useSeletor } from 'react-redux'
+import {useSelector } from 'react-redux'
 const Quiz = () => {
 
-  const {question} = useSeletor(state => state)
+  const state = useSelector(state => state)
 
   useEffect(() =>{
-    console.log();
+    console.log(state);
   })
 
   function onNext() {
